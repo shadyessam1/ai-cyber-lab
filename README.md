@@ -1,30 +1,35 @@
 # ai-cyber-lab
 
-معمل عملي بيجمع بين الـ Machine Learning والأمن السيبراني. كل أسبوع له notebooks وملاحظات ونتايج.
+Hands-on lab combining machine learning and cybersecurity. Each week has its own notebooks, notes and results.
 
 ## Roadmap
 
 | Week | Topic | Status |
 |------|-------|--------|
-| 1 | Setup + أول مصنف صور (fast.ai Lesson 1) + TryHackMe Pre-Security | In progress |
+| 1 | Setup + first image classifier (fast.ai Lesson 1) + TryHackMe Pre-Security | In progress |
 
 ## Week 1
 
-- [x] إنشاء الـ repo وتجهيز Colab
-- [ ] تشغيل notebook الدرس 1 زي ما هو
-- [ ] تدريب مصنف على حاجتين من اختياري
-- [ ] TryHackMe: أول 3 غرف Pre-Security
+- [x] Repo + Colab environment
+- [x] Run fast.ai Lesson 1 notebook as is
+- [ ] Train my own classifier (custom classes)
+- [ ] TryHackMe: first 3 Pre-Security rooms
 
 ### Results
 
-| Experiment | Classes | Images per class | Model | Accuracy |
-|-----------|---------|------------------|-------|----------|
-| Lesson 1 baseline (bird vs forest) | 2 | ~200 | resnet18 | _TBD_ |
+| Experiment | Classes | Images (train / valid) | Model | Accuracy |
+|-----------|---------|------------------------|-------|----------|
+| Lesson 1 baseline (bird vs forest) | 2 | 103 / 25 | resnet18 | 0.92 (23/25 on validation) |
 | Custom classifier | _TBD_ | _TBD_ | resnet18 | _TBD_ |
+
+> Note: the validation set is small (25 images), so each wrong prediction costs 4% accuracy. Treat the number as approximate; it can shift a few points between runs.
 
 ### Data collection notes
 
-_اكتب هنا الصور جت منين، عددها، وأي تنضيف عملته._
+- **Baseline:** images of `bird` and `forest` downloaded with a web image search (`ddgs`), 128 images in total after removing broken downloads.
+- **Split:** 80% train / 20% validation, random split with a fixed seed (42).
+- **Training:** `resnet18`, pretrained, `fine_tune(3)` on a Colab T4 GPU.
+- **Custom classifier:** _TBD. Write here where the images came from, how many per class, and any cleaning done._
 
 ## Structure
 
@@ -40,4 +45,4 @@ ai-cyber-lab/
 
 ## Running on Colab
 
-افتح الـ notebook من GitHub في Colab، فعّل T4 GPU من `Runtime → Change runtime type`، وبعدين Run all.
+Open the notebook from GitHub in Colab (Runtime -> Change runtime type -> T4 GPU), then Run all.
