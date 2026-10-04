@@ -6,14 +6,14 @@ Hands-on lab combining machine learning and cybersecurity. Each week has its own
 
 | Week | Topic | Status |
 |------|-------|--------|
-| 1 | Setup + first image classifier (fast.ai Lesson 1) + TryHackMe Pre-Security | In progress |
+| 1 | Setup + first image classifier (fast.ai Lesson 1) + TryHackMe Pre-Security | Done |
 
 ## Week 1
 
 - [x] Repo + Colab environment
 - [x] Run fast.ai Lesson 1 notebook as is
 - [x] Train my own classifier (custom classes)
-- [ ] TryHackMe: first 3 Pre-Security rooms
+- [x] TryHackMe: first 3 Pre-Security rooms
 
 ### Results
 
